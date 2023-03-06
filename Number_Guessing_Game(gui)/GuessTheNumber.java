@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.Slider;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.layout.VBox;
@@ -37,7 +36,7 @@ import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.util.Duration;
 
-public class GuessTheNumber extends Application 
+public class GuessTheNumberr extends Application 
 {
     
     private int target, 
@@ -63,8 +62,6 @@ public class GuessTheNumber extends Application
                     home = new Button("Back to Home");
 
     private RadioButton radioButton = new RadioButton("");
-
-    private Slider slider = new Slider(0, 10, 5);   // slider.setMin(0);slider.setMax(100);slider.setValue(50);
 
     private Stage stage;
 
@@ -142,7 +139,7 @@ public class GuessTheNumber extends Application
         VBox root = new VBox(root_width / 15);
         root.setPadding(new Insets(root_height / 20));
         root.setAlignment(Pos.CENTER);
-        root.getChildren().addAll(points, label, lv1, lv2, lv3, lv4, slider);
+        root.getChildren().addAll(points, label, lv1, lv2, lv3, lv4);
         setborder(root);
 
         // Set up the scene and the stage
@@ -241,6 +238,7 @@ public class GuessTheNumber extends Application
             /* Adding the elements again to the screen */
             root.getChildren().addAll(points, messageLabel, restart, home);
         }
+        
         if (--atp == 0 && guess != target) 
         {
             /* creating loosing sound */
@@ -269,7 +267,8 @@ public class GuessTheNumber extends Application
      * A Function for the selected level to start in
      * @param lvl   The number of level of the User's choice
      */
-    private void startlevel(int lvl) {
+    private void startlevel(int lvl) 
+    {
         switch (lvl) {
             case 1:
                 lower = 0;
@@ -392,7 +391,8 @@ public class GuessTheNumber extends Application
         root.setPadding(new Insets(root_height / 20));
         root.setAlignment(Pos.CENTER);
         root.getChildren().addAll(label, low, up, button);
-        setborder(root); //Adding a colourfull gradient border to the layout
+        //Adding a colourfull gradient border to the layout
+        setborder(root); 
 
         /* Setting up the scene */
         Scene scene = new Scene(root, root_width, root_height);
