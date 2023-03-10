@@ -75,7 +75,7 @@ class ATM_Machine {
             } while(ch!=5);
 
         user = null; 
-        sc.close();
+        // sc.close();
         main(args);
         
     }
